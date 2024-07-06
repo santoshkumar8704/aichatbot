@@ -2,8 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import "../App.css";
+
 const sendMessageAPI = async (message) => {
-  const res = await axios.post("https://accenchat.onrender.com/ask", { message });
+  const res = await axios.post("https://accenchat.onrender.com/ask", {
+    message,
+  });
   return res.data;
 };
 
@@ -49,6 +52,12 @@ const Chat = ({ conversations, setConversations }) => {
     setMessage("");
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSubmitMessage();
+    }
+  };
+
   return (
     <div className="bg-gray-600 w-full h-[650px] flex flex-col ml-10 mr-4">
       <div
@@ -89,6 +98,7 @@ const Chat = ({ conversations, setConversations }) => {
         <input
           type="text"
           value={message}
+          onKeyPress={handleKeyPress}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Type your message..."
           className="flex-1 px-4 py-2 bg-chatBoxColor text-white rounded-lg focus:outline-none"
