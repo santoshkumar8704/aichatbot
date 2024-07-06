@@ -8,6 +8,7 @@ import Chat from "./components/Chat.jsx";
 import PromptForm from "./components/imagegenerator/PromptForm.jsx";
 import Chatsection from "./components/Chatsection.jsx";
 import AppFIller from "./components/AppFIller.jsx";
+import Ramya from "./components/Ramya.jsx";
 const queryclient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       },{
         path:"/",
         element:<AppFIller />
+      },
+      {
+        path:"/tomyangrybird",
+        element:<Ramya />
       }
     ]
   }
