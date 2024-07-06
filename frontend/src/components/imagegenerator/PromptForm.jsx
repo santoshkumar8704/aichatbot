@@ -11,7 +11,7 @@ const PromptForm = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:9090/generate-image",
+        "https://accenchat.onrender.com/generate-image",
         {
           prompt: prompt.trim(),
         }

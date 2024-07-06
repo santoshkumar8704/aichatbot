@@ -3,7 +3,7 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import "../App.css";
 const sendMessageAPI = async (message) => {
-  const res = await axios.post("http://localhost:9090/ask", { message });
+  const res = await axios.post("https://accenchat.onrender.com/ask", { message });
   return res.data;
 };
 
