@@ -22,7 +22,7 @@ const AppFiller = () => {
             </p>
           </Link>
         </div>
-        <div className="w-1/6 h-1/2 bg-[url('starysky.jpeg')] bg-cover bg-center  rounded-lg shadow-lg flex flex-col  p-4 transform transition-transform hover:scale-105">
+        <div className="w-1/6 h-1/2 bg-[url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/starry-night-by-vincent-van-gogh-vincent-van-gogh.jpg')] bg-cover bg-center  rounded-lg shadow-lg flex flex-col  p-4 transform transition-transform hover:scale-105">
           <Link to="/image" className="">
             <h1 className="text-white text-3xl ">Image</h1>
             <p className="text-white mt-60 ">
