@@ -52,7 +52,7 @@ const PromptForm = () => {
             {loading ? "Generating..." : "Generate Image"}
           </button>
         </div>
-        <div className="w-1/2 h-auto max-lg:w-full max-lg:mt-10 bg-gray-700 p-6 rounded-lg shadow-md ">
+        <div className="w-1/3 h-auto max-lg:w-full max-lg:mt-10 bg-gray-700 p-6 rounded-lg shadow-md ">
           {imageUrl ? (
             <div className="flex justify-center items-center h-full">
               <img
