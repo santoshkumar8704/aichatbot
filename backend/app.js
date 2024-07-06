@@ -9,7 +9,7 @@ const openai = new OpenAI({
 
 const PORT = process.env.PORT || 9090;
 const corsOptions = {
-  origin: ["http://localhost:5173", "http://localhost:5174","https://accenchat.vercel.app/","https://accenchat.onrender.com/"],
+  origin: ["http://localhost:5173", "http://localhost:5174","https://accenchat.vercel.app","https://accenchat.onrender.com/"],
 };
 const app = express();
 app.use(cors(corsOptions));
