@@ -28,8 +28,8 @@ const PromptForm = () => {
 
   return (
     <div className="w-full h-screen mx-auto p-4 text-gray-800 bg-white rounded-lg shadow-md">
-      <div className="flex p-10">
-        <div className="w-1/2 ">
+      <div className="flex max-lg:flex-col p-10">
+        <div className="w-1/2 max-lg:w-full ">
           <h2 className="text-xl font-semibold mb-4">Generate Image</h2>
           <h3 className="text-lg mb-4">Make your imagination come to life</h3>
           <div className="mb-4">
@@ -52,7 +52,7 @@ const PromptForm = () => {
             {loading ? "Generating..." : "Generate Image"}
           </button>
         </div>
-        <div className="w-1/2 h-auto bg-gray-700 p-6 rounded-lg shadow-md ">
+        <div className="w-1/2 h-auto max-lg:w-full max-lg:mt-10 bg-gray-700 p-6 rounded-lg shadow-md ">
           {imageUrl ? (
             <div className="flex justify-center items-center h-full">
               <img

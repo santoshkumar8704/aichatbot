@@ -11,11 +11,11 @@ const Chatsection = () => {
       { role: "assistant", content: "Hello, how can I assist you today?" },
     ]);
   return (
-    <div className="flex justify-between w-full h-full mx-auto p-6 bg-white">
-      <div className="w-1/4 mt-6">
+    <div className="flex justify-between w-full h-full mx-auto p-6 bg-white ">
+      <div className="w-1/4 mt-6 hidden lg:block">
         <Banner clearChat={clearChat} />
       </div>
-      <div className="w-3/4 mr-10">
+      <div className="w-3/4 max-lg:w-full  mr-10">
         <Chat
           conversations={conversations}
           setConversations={setConversations}

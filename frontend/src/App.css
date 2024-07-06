@@ -73,3 +73,13 @@ html, body {
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite linear;
 }
+@media (min-width: 640px) {
+  .chat-container {
+    padding: 12px;
+  }
+}
+@media (min-width: 1024px) and (orientation: landscape) {
+  .chat-container {
+    padding: 16px;
+  }
+}
