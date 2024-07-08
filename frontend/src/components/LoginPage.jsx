@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from './AuthProvider';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post('https://accenchat.onrender.com/api/users/login', { email, password });
-      localStorage.setItem('token', res.data.token);
+      login(res.data.token);
       // Redirect to homepage
       navigate('/');
     } catch (err) {
@@ -21,9 +23,11 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 text-gray-800">
+    <div className="min-h-screen flex items-center justify-center text-gray-800 bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-gray-900 text-center">Login to AccenChat</h2>
+        <h2 className="text-2xl font-bold mb-4 text-gray-900 text-center">Login to AccenChat</h2>
+        <div className="mb-2 text-gray-500 text-center">example: test@gmail.com</div>
+        <div className="mb-2 text-gray-500 text-center">password: test@123</div>
         {error && <div className="mb-4 text-red-500">{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="mb-4">

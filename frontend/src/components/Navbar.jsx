@@ -1,10 +1,17 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from './AuthProvider';
 
 const Navbar = () => {
-  const { pathname } = useLocation(); // useLocation hook to get current URL path
+  const { pathname } = useLocation();
+  const { isAuthenticated, logout } = useAuth();
+  const navigate = useNavigate();
 
-  // Determine if the active tab is "home" based on the pathname
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
+
   const isActiveHome = pathname === "/";
 
   return (
@@ -20,15 +27,31 @@ const Navbar = () => {
           <Link to="/">
             <div className="flex items-center">
               <img src="logobot.png" className="h-10" alt="Logo" />
-              <h1 className="text-2xl font-bold  ml-4">
+              <h1 className="text-2xl font-bold ml-4">
                 Accenchat
               </h1>
             </div>
           </Link>
           <div className="flex space-x-4 max-lg:space-x-11 font-bold text-lg max-lg:pb-5">
             <Link to="/">Home</Link>
-            <Link to="/image">Image Generator</Link>
-            <Link to="/chat">Chat</Link>
+            {isAuthenticated && (
+              <>
+                <Link to="/image">Image Generator</Link>
+                <Link to="/chat">Chat</Link>
+                <button
+                  onClick={handleLogout}
+                  
+                >
+                  Logout
+                </button>
+              </>
+            )}
+            {!isAuthenticated && (
+              <>
+                <Link to="/login">Login</Link>
+                <Link to="/signup">Sign Up</Link>
+              </>
+            )}
           </div>
         </div>
       </div>

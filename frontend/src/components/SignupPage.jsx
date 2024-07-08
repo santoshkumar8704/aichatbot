@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const SignupPage = () => {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post('https://accenchat.onrender.com/api/users/register', { email, username, password });
       localStorage.setItem('token', res.data.token);
+      navigate('/login');
       // Redirect to dashboard or home page
     } catch (err) {
       console.error(err.response.data);

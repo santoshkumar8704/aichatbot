@@ -3,18 +3,34 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import "../App.css";
 
-const sendMessageAPI = async (message) => {
-  const res = await axios.post("https://accenchat.onrender.com/ask", {
-    message,
-  });
-  return res.data;
-};
-
-const Chat = ({ conversations, setConversations }) => {
+const Chat = () => {
+  const [conversations, setConversations] = useState([]); // State to hold fetched conversations
   const [message, setMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
 
   const chatContainerRef = useRef(null); // Ref for the chat container
+
+  useEffect(() => {
+    // Fetch initial conversations from backend
+    fetchConversations();
+  }, []);
+
+  const fetchConversations = async () => {
+    try {
+      const response = await axios.get("https://accenchat.onrender.com/conversations"); // Adjust URL based on your backend route
+      setConversations(response.data); // Assuming response.data is an array of conversations
+      scrollChatToBottom(); // Optionally scroll to bottom when conversations load
+    } catch (error) {
+      console.error("Error fetching conversations:", error);
+    }
+  };
+
+  const sendMessageAPI = async (message) => {
+    const res = await axios.post("https://accenchat.onrender.com/ask", {
+      message,
+    });
+    return res.data;
+  };
 
   const mutation = useMutation({
     mutationFn: sendMessageAPI,
@@ -25,16 +41,9 @@ const Chat = ({ conversations, setConversations }) => {
         ...prevConversations,
         { role: "assistant", content: data.message },
       ]);
+      scrollChatToBottom(); // Scroll to bottom after sending a message
     },
   });
-
-  useEffect(() => {
-    // Scroll chat container to bottom when conversations change
-    if (chatContainerRef.current) {
-      chatContainerRef.current.scrollTop =
-        chatContainerRef.current.scrollHeight;
-    }
-  }, [conversations]);
 
   const handleSubmitMessage = () => {
     const currentMessage = message.trim();
@@ -58,12 +67,15 @@ const Chat = ({ conversations, setConversations }) => {
     }
   };
 
+  const scrollChatToBottom = () => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
+  };
+
   return (
     <div className="bg-gray-600 w-full h-[650px] flex flex-col ml-10 mr-4">
-      <div
-        ref={chatContainerRef}
-        className="flex-1 px-4 py-8 overflow-y-auto chat-container"
-      >
+      <div ref={chatContainerRef} className="flex-1 px-4 py-8 overflow-y-auto chat-container">
         <div className="space-y-2">
           {conversations.map((entry, index) => (
             <div
