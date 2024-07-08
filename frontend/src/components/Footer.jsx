@@ -9,7 +9,7 @@ const Footer = () => {
           <h1 className="text-lg font-bold ml-2">Accenchat</h1>
         </div>
         <div className="text-gray-300">
-          &copy; 2024 AccenChat. All rights reserved.
+          &copy; 2024 AccenChat. All rights reserved
         </div>
       </div>
     </footer>
