@@ -7,7 +7,6 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Chatsection from "./components/Chatsection.jsx";
 import PromptForm from "./components/imagegenerator/PromptForm.jsx";
 import AppFIller from "./components/AppFIller.jsx";
-import Ramya from "./components/Ramya.jsx";
 import LoginPage from "./components/LoginPage.jsx";
 import SignupPage from "./components/SignupPage.jsx";
 import { AuthProvider } from "./components/AuthProvider";
@@ -44,10 +43,6 @@ const router = createBrowserRouter([
             element: <PromptForm />
           },
           
-          {
-            path: "/tomyangrybird",
-            element: <Ramya />
-          }
         ]
       }
     ]
