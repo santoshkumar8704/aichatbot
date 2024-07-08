@@ -5,7 +5,7 @@ import Card from "./Card";
 
 const AppFiller = () => {
   return (
-    <div className="w-full h-[100%] moving-gradient mb-10">
+    <div className="w-full  h-[100%] moving-gradient mb-10">
       <div className="flex flex-col items-center justify-center ">
         <span className="text-5xl font-bold bg-white px-2 text-black text-center mt-10">
           Welcome to <span className="">Accenchat,</span>

@@ -26,7 +26,7 @@ const LoginPage = () => {
     <div className="min-h-screen flex items-center justify-center text-gray-800 bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-bold mb-4 text-gray-900 text-center">Login to AccenChat</h2>
-        <div className="mb-2 text-gray-500 text-center">example: test@gmail.com</div>
+        <div className="mb-2 text-gray-500 text-center">for testing: test@gmail.com</div>
         <div className="mb-2 text-gray-500 text-center">password: test@123</div>
         {error && <div className="mb-4 text-red-500">{error}</div>}
         <form onSubmit={handleSubmit}>

@@ -29,7 +29,7 @@ const Chatsection = () => {
       <div className="w-1/4 mt-6 hidden lg:block">
         <Banner clearChat={clearChat} />
       </div>
-      <div className="w-3/4 max-lg:w-full mr-10">
+      <div className="w-3/4 max-lg:w-full max-sm:w-full   mr-10">
         <Chat conversations={conversations} setConversations={setConversations} />
       </div>
     </div>
