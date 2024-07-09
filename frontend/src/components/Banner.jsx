@@ -15,7 +15,6 @@ const Banner = ({ clearChat }) => {
         </button>
         <p className='text-sm mt-20'>Empowering digital interactions with AI</p>
       </div>
-      
     </div>
   );
 };
