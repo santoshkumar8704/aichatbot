@@ -11,6 +11,8 @@ import LoginPage from "./components/LoginPage.jsx";
 import SignupPage from "./components/SignupPage.jsx";
 import { AuthProvider } from "./components/AuthProvider";
 import PrivateRoute from "./components/PrivateRoute";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const queryclient = new QueryClient();
 
@@ -42,7 +44,6 @@ const router = createBrowserRouter([
             path: "/image",
             element: <PromptForm />
           },
-          
         ]
       }
     ]
@@ -54,6 +55,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <AuthProvider>
       <React.StrictMode>
         <RouterProvider router={router} />
+        <ToastContainer />
       </React.StrictMode>
     </AuthProvider>
   </QueryClientProvider>

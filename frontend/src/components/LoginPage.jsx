@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthProvider';
+import { toast } from 'react-toastify';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -15,10 +16,11 @@ const LoginPage = () => {
     try {
       const res = await axios.post('https://accenchat.onrender.com/api/users/login', { email, password });
       login(res.data.token);
-      // Redirect to homepage
+      toast.success('Login successful!');
       navigate('/');
     } catch (err) {
       setError('Invalid email or password. Please try again.');
+      toast.error('Invalid email or password. Please try again.');
     }
   };
 

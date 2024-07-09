@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import { toast } from 'react-toastify';
 const SignupPage = () => {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
@@ -13,6 +13,7 @@ const SignupPage = () => {
     try {
       const res = await axios.post('https://accenchat.onrender.com/api/users/register', { email, username, password });
       localStorage.setItem('token', res.data.token);
+      toast.success('Registration successful! You can now log in.');
       navigate('/login');
       // Redirect to dashboard or home page
     } catch (err) {
