@@ -7,10 +7,10 @@ const AppFiller = () => {
   return (
     <div className="w-full  h-[100%] moving-gradient mb-10">
       <div className="flex flex-col items-center justify-center ">
-        <span className="text-5xl font-bold bg-white px-2 text-black text-center mt-10">
+        <span className="text-5xl font-bold bg-white px-2 text-orange-500 text-center mt-10">
           Welcome to <span className="">Accenchat,</span>
         </span>
-        <span className="text-lg font-semibold bg-black text-white px-2">
+        <span className="text-lg font-semibold bg-orange-500 text-white px-2">
           Your friendly AI companion ready to chat and create beautiful images with you!
         </span>
       </div>

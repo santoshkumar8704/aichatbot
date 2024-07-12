@@ -26,8 +26,8 @@ const Navbar = () => {
         <div className="flex max-lg:flex-col items-center justify-between h-16">
           <Link to="/">
             <div className="flex items-center">
-              <img src="logobot.png" className="h-10" alt="Logo" />
-              <h1 className="text-2xl font-bold ml-4">
+              <img src="accenchatlogo-removebg-preview.png" className="h-20" alt="Logo" />
+              <h1 className="text-2xl font-bold ">
                 Accenchat
               </h1>
             </div>

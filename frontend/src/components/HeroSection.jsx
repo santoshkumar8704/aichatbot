@@ -20,14 +20,14 @@ const HeroSection = () => {
           </span>
           {isAuthenticated ? (
             <Link to="/chat" className="">
-                          <button className="bg-black p-6 text-xl w-full rounded-md font-bold text-white">
+                          <button className="bg-orange-500 p-6 text-xl w-full rounded-md font-bold text-white">
                             Get started
                           </button>
                         </Link>
 
           ) : (
             <Link to="/login" className="">
-            <button className="bg-black p-6 text-xl w-full rounded-md font-bold text-white">
+            <button className="bg-orange-500 p-6 text-xl w-full rounded-md font-bold text-white">
               Get Started
             </button>
           </Link>

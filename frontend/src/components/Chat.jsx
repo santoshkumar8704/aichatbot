@@ -105,7 +105,7 @@ const Chat = ({conversations,setConversations}) => {
         <button
           onClick={handleSubmitMessage}
           disabled={isTyping}
-          className="ml-2 px-4 py-2 bg-accenturePurple text-white rounded-lg focus:outline-none"
+          className="ml-2 px-4 py-2 bg-orange-500 text-white rounded-lg focus:outline-none"
         >
           Send
         </button>

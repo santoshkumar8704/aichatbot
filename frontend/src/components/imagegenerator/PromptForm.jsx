@@ -48,7 +48,7 @@ const PromptForm = () => {
           </div>
           <button
             onClick={handleGenerateImage}
-            className="w-1/2 py-2 px-4 bg-accenturePurple text-white rounded-lg font-semibold hover:bg-indigo-700 focus:outline-none"
+            className="w-1/2 py-2 px-4 bg-orange-500 text-white rounded-lg font-semibold hover:bg-indigo-700 focus:outline-none"
             disabled={loading}
           >
             {loading ? "Generating..." : "Generate Image"}

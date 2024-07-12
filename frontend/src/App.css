@@ -34,7 +34,6 @@ html, body {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
-
 @keyframes gradientMove {
   0% {
     background-position: 0% 50%;
@@ -48,10 +47,11 @@ html, body {
 }
 
 .moving-gradient {
-  background: linear-gradient(270deg, #e0c3fc, #8ec5fc, #e0c3fc);
+  background: linear-gradient(270deg, #7B42F6, #42C2F6, #7B42F6); /* Purple and blue gradient */
   background-size: 200% 200%;
   animation: gradientMove 8s ease infinite;
 }
+
 
 @keyframes shimmer {
   0% {
